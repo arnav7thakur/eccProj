@@ -1,0 +1,85 @@
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.title h1 {
+    color: #57ad68;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.car {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #57ad68;
+    border-radius: 10px;
+}
+
+.car h2 {
+    color: #57ad68;
+}
+
+.public-key {
+    margin-bottom: 10px;
+}
+
+textarea, input, button {
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #57ad68;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+textarea {
+    resize: none; /* Disable textarea resizing */
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #57ad68;
+    color: #000;
+}
+
+.block {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #333;
+    border: 1px solid #57ad68;
+    border-radius: 10px;
+}
+
+#encryptedDisplay {
+    color: #57ad68;
+}
+
+#publicKeySender {
+    max-width: 200px; /* Adjust the max-width as needed */
+    /* overflow: hidden;*/
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

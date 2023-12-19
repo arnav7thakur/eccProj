@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Signature & Encryption Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="titlee">
+        <h1>Enhancing Vehicular Ad-Hoc Network Security through ECC-based Digital Signatures for Vehicle-to-Vehicle Communication</h1>
+    </div>
+
+    <div class="container">
+        <div class="car sender">
+            <h2>Car1: (Sends Message)</h2>
+            <div class="public-key">
+                <p>Public Key (Sender): <span id="publicKeySender"></span></p>
+            </div>
+            <textarea id="messageInput" placeholder="Type your message..." rows="4" cols="50" maxlength="200"></textarea>
+            <input type="text" id="publicKeyReceiverInput" placeholder="Enter Car2's Public Key">
+            <input type="text" id="privateKeyInput" placeholder="Type private key (Sender)">
+            <button onclick="signAndEncrypt('sender')">Sign & Encrypt</button>
+        </div>
+        <div class="block">
+            <h2>Encrypted Ciphertext</h2>
+            <div id="encryptedDisplay"></div>
+        </div>
+        <!-- Add this input field in the Car2 section -->
+        <div class="car receiver">
+            <h2>Car2: (Receives Message)</h2>
+            <p>Public Key (Receiver): <span id="publicKeyReceiver"></span></p>
+            <div>
+                <p>Signed/Encrypted Message:</p>
+                <textarea id="receivedMessageInput" placeholder="Paste received message..." rows="4" cols="50" maxlength="200" required></textarea>
+                <input type="text" id="publicKeyCar1Input" placeholder="Enter Car1's Public Key" required pattern="[0-9a-fA-F]{64}">
+                <input type="text" id="privateKeyReceiverInput" placeholder="Type private key (Receiver)" required minlength="64" maxlength="64">
+                <button id="decryptButton" onclick="decryptAndVerify()">Decrypt & Verify</button>
+                <div id="decryptedSection">
+                    <h2>Signature and Decrypted Message</h2>
+                    <div id="decryptedDisplay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

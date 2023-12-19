@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECC Encryption</title>
+    <link rel="stylesheet" href="styles.css">
+</head><!-- ... (previous HTML code) ... -->
+<body>
+    <h1>ECC Encryption</h1>
+
+    <div class="key-container">
+        <h2>Generated Keys:</h2>
+        <div>
+            <label for="private_key">Private Key:</label>
+            <textarea id="private_key" readonly>{{ private_key }}</textarea>
+        </div>
+        <div>
+            <label for="public_key">Public Key:</label>
+            <textarea id="public_key" readonly>{{ public_key }}</textarea>
+        </div>
+    </div>
+
+    <form action="/encrypt" method="post">
+        <!-- ... (previous form fields) ... -->
+        <button type="submit">Encrypt</button>
+    </form>
+
+    {% if encrypted_message %}
+    <div class="result-container">
+        <h2>Encrypted Message:</h2>
+        <p>{{ encrypted_message }}</p>
+    </div>
+    {% endif %}
+
+    {% if success %}
+    <div class="success-container">
+        <h2>Success!</h2>
+        <p>Keys authenticated and message encrypted.</p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="error-container">
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
